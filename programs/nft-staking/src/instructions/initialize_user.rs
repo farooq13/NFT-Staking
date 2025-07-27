@@ -25,10 +25,10 @@ pub struct InitializeUser<'info> {
 
 impl<'info> InitializeUser<'info> {
   pub fn initialize_config(&mut self, bumps: &InitializeUserBumps) -> Result<()> {
-    self.config.set_inner(UserAccount {
+    self.user_account.set_inner(UserAccount {
       points: 0,
       amount_staked: 0,
-      bump: bumps.user_bump
+      bump: bumps.user_account
     });
 
     
